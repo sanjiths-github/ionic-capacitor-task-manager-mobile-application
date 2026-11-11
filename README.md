@@ -2,6 +2,8 @@
 
 Android production releases use the existing release keystore. GitHub Actions checks the configured `ANDROID_SIGNING_CERT_SHA256` fingerprint before publishing. The app checks the published release version and, with the user's approval, opens a short-lived download link in the browser; Android's installer handles the user-approved APK installation. Builds installed before this update feature need a one-time manual upgrade. Google Play and iOS distribution require their respective store-supported update flows.
 
+After the first stable tag release, the current Android APK is always available at `https://github.com/sanjuconnectrader/taskflow-mobile/releases/latest/download/TaskFlow.apk`.
+
 Capacitor Android application packaging the **same local static UI** as TaskFlow web and desktop. Package ID: `com.taskflow.mobile`. No production `server.url` points to a website.
 
 ## Requirements
