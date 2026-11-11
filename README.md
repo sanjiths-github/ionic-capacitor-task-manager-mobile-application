@@ -41,4 +41,4 @@ For iOS, work on a Mac with Xcode, install `@capacitor/ios`, add/sync the iOS pl
 
 ## Downloads
 
-[Download Android APKs](https://github.com/sanjuconnectrader/taskflow-mobile/releases/tag/local-2026-11-11). The signed release APK requires a reachable HTTPS TaskFlow backend; choose it through **API connection settings** on the sign-in screen. Production hosting is not yet provisioned. The additional Local-Debug APK uses the separate `com.taskflow.mobile.dev` ID and permits the USB-reversed local API for development.
+[Download Android APKs](https://github.com/sanjuconnectrader/taskflow-mobile/releases/tag/local-2026-11-11-ui-cleanup). The signed release APK requires a reachable HTTPS TaskFlow backend configured using `NEXT_PUBLIC_API_URL` before building. Production hosting is not yet provisioned. The additional Local-Debug APK uses the separate `com.taskflow.mobile.dev` ID and permits the USB-reversed local API for development.
