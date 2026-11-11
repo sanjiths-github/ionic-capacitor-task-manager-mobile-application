@@ -38,3 +38,7 @@ Run `npm test` for configuration checks. Device/emulator testing must additional
 The GitHub tag workflow checks the immutable frontend SHA, tests/builds the UI, restores the Android key from Secrets, compiles on JDK 21/SDK 36, verifies signing, and uploads the APK to GitHub Releases after the production environment gate. See [DEPLOYMENT.md](DEPLOYMENT.md) for credentials and approvals.
 
 For iOS, work on a Mac with Xcode, install `@capacitor/ios`, add/sync the iOS platform and implement the `SecureSession` bridge with iOS Keychain. This repository is structured for that extension; it does not claim to ship a working iOS client.
+
+## Downloads
+
+[Download Android APKs](https://github.com/sanjuconnectrader/taskflow-mobile/releases/tag/local-2026-11-11). The signed release APK requires a reachable HTTPS TaskFlow backend; choose it through **API connection settings** on the sign-in screen. Production hosting is not yet provisioned. The additional Local-Debug APK uses the separate `com.taskflow.mobile.dev` ID and permits the USB-reversed local API for development.

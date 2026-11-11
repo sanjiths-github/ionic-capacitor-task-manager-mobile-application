@@ -14,4 +14,5 @@ const r = spawnSync(
   ["scripts/gradle.mjs", "assembleRelease"],
   { env: process.env, stdio: "inherit" },
 );
-process.exit(r.status || 0);
+if(r.error)throw r.error;
+process.exit(r.status ?? 1);

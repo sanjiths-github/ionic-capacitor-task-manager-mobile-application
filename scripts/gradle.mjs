@@ -6,4 +6,5 @@ const r = spawnSync(command, args, {
   stdio: "inherit",
   shell: process.platform === "win32",
 });
-process.exit(r.status || 0);
+if(r.error)throw r.error;
+process.exit(r.status ?? 1);

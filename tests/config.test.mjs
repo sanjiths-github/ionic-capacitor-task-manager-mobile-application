@@ -1,2 +1,15 @@
-import {test} from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
-test('packaged frontend uses local assets and only enables cleartext for explicit development',()=>{const config=fs.readFileSync('capacitor.config.ts','utf8');assert.match(config,/webDir:\s*["']web["']/);assert.match(config,/cleartext:\s*process\.env\.TASKFLOW_DEV_HTTP\s*===\s*["']1["']/);assert.doesNotMatch(config,/url:\s*['"]https?:/);const release=fs.readFileSync('android/app/build.gradle','utf8');assert.match(release,/Resync without TASKFLOW_DEV_HTTP/);assert.match(release,/Missing release signing environment variable/);});
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+test("packaged frontend uses local assets and only enables cleartext for explicit development", () => {
+  const config = fs.readFileSync("capacitor.config.ts", "utf8");
+  assert.match(config, /webDir:\s*["']web["']/);
+  assert.match(
+    config,
+    /cleartext:\s*process\.env\.TASKFLOW_DEV_HTTP\s*===\s*["']1["']/,
+  );
+  assert.doesNotMatch(config, /url:\s*['"]https?:/);
+  const release = fs.readFileSync("android/app/build.gradle", "utf8");
+  assert.match(release, /Resync without TASKFLOW_DEV_HTTP/);
+  assert.match(release, /Missing release signing environment variable/);
+});
