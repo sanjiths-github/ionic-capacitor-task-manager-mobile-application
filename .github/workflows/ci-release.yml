@@ -87,7 +87,7 @@ jobs:
           actual=$(sed -n 's/^Signer #1 certificate SHA-256 digest: //p' signature.txt | tr '[:upper:]' '[:lower:]' | tr -d ':')
           expected=$(printf '%s' "$ANDROID_SIGNING_CERT_SHA256" | tr '[:upper:]' '[:lower:]' | tr -d ':')
           test "$actual" = "$expected" || { echo 'Android signing certificate does not match the configured upgrade certificate.'; exit 1; }
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: android-release-apk
           path: |
